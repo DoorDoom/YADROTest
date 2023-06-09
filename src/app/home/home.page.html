@@ -1,20 +1,18 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div class="currency-rub">
+    <ion-label class="currency-rub__name">Currency RUB</ion-label>
+    <ion-icon class="currency-rub__add" name="add-circle-outline" color="primary" id="click-trigger" (click)="openMenu()"></ion-icon>
+    <ion-popover *ngIf="currencies.length>0" trigger="click-trigger" triggerAction="click">
+      <ng-template>
+        <ion-list class="currency-rub__list" *ngFor="let item of currencies">
+          <ion-content class="ion-padding" (click)="refreshMenu(item)">{{item}}</ion-content>
+        </ion-list>
+      </ng-template>
+    </ion-popover>
+    <br>
+    <ion-label class="currency-rub__date ion-padding-vertical">{{currentDate | date:'yyyy-MM-dd, hh:mm:ss'}}</ion-label>
+      <ion-list class="currency-rub__list" *ngFor="let item of currencyList">
+        <app-currency-item [currency]="item"></app-currency-item>
+    </ion-list>
   </div>
 </ion-content>

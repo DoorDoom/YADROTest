@@ -1,0 +1,18 @@
+<ion-item class="list__currency-data" lines="none">
+  <ion-label class="currency-data__name">{{currency.name}}</ion-label>
+   <div class="currency-data__value-container">
+      <ion-label class="value-container__value">
+        {{currency.value| number: '1.3-3'}}
+      </ion-label>
+      <ion-icon class="value-container__down-arrow"
+        *ngIf="currency.difference[1]==='-'" name="caret-down-outline">
+      </ion-icon>
+      <ion-icon class="value-container__up-arrow"
+        *ngIf="currency.difference[1]==='+'" name="caret-up-outline">
+      </ion-icon>
+      <ion-label class="value-container__difference" 
+        [hidden]="currency.difference===''" >
+        {{currency.difference}}
+      </ion-label>
+    </div>
+</ion-item>

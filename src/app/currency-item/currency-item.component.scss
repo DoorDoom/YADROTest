@@ -1,0 +1,43 @@
+.list {
+
+    // .list__currency-data
+
+    &__currency-data {
+        width: 100%;
+    }
+}
+.currency-data {
+
+    &__name {
+        width: 25%;
+    }
+
+    &__value-container {
+        width: 75%;
+        height: 75%;
+        border: 0.1rem solid;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.value-container {
+
+    &__up-arrow{
+        color:green;
+    }
+
+    &__down-arrow{
+        color:red;
+    }
+
+    &__value {
+        width: 50%;
+        padding: 0.4rem;
+    }
+
+    &__difference {
+        width: 40%;
+        padding: 0.2rem;
+    }
+}
